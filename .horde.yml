@@ -30,7 +30,7 @@ dependencies:
       horde/core: ^3
       horde/db: ^3
       horde/otp: ^1
-      tecnickcom/tcpdf: ^6.10
+      horde/barcode: ^1
     ext:
       gettext: '*'
 keywords:

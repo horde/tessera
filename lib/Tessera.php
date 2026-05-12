@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Horde\Barcode\Barcode;
+use Horde\Barcode\Encoder\Qr\ErrorCorrectionLevel;
 use Horde\Otp\ProvisioningUri;
 use Horde\Otp\Secret;
 use Horde\Otp\Totp;
@@ -41,8 +43,13 @@ class Tessera
 
     public static function QRCode(string $url, int $size = 3, string $type = 'H'): string
     {
-        $qrcode = new TCPDF2DBarcode($url, 'QRCODE,' . $type);
-        return $qrcode->getBarcodeHTML($size, $size);
+        $ecLevel = match (strtoupper($type)) {
+            'L' => ErrorCorrectionLevel::L,
+            'M' => ErrorCorrectionLevel::M,
+            'Q' => ErrorCorrectionLevel::Q,
+            default => ErrorCorrectionLevel::H,
+        };
+        return Barcode::qrHtml($url, $size, $ecLevel);
     }
 
     public static function GenerateKey(): string

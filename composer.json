@@ -21,7 +21,7 @@
         "horde/core": "^3 || dev-FRAMEWORK_6_0",
         "horde/db": "^3 || dev-FRAMEWORK_6_0",
         "horde/otp": "^1 || dev-FRAMEWORK_6_0",
-        "tecnickcom/tcpdf": "^6.10",
+        "horde/barcode": "^1 || dev-FRAMEWORK_6_0",
         "ext-gettext": "*"
     },
     "require-dev": {},
