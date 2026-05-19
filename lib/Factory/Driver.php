@@ -1,4 +1,5 @@
 <?php
+use Horde\Injector\Injector;
 
 /**
  * Tessera_Driver factory.
@@ -18,7 +19,7 @@ class Tessera_Factory_Driver extends Horde_Core_Factory_Injector
      *
      * @return Tessera_Driver
      */
-    public function create(Horde_Injector $injector)
+    public function create(Horde_Injector|Injector $injector)
     {
         global $conf;
 
