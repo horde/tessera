@@ -1,0 +1,19 @@
+.DS_Store
+.buildpath
+.cache
+.project
+.settings
+nbproject/
+*~
+.#*
+*.bak
+*.orig
+*.rej
+*.swp
+*.kdev4
+.kdev4/*
+
+# Ignore config files (deployment-specific)
+config/conf.php
+config/conf.bak.php
+config/*.local.php
