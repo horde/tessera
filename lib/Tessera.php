@@ -1,8 +1,7 @@
 <?php
-use Horde\Tessera\TesseraConfig;
-
 declare(strict_types=1);
 
+use Horde\Tessera\TesseraConfig;
 use Horde\Barcode\Barcode;
 use Horde\Barcode\Encoder\Qr\ErrorCorrectionLevel;
 use Horde\Otp\ProvisioningUri;
