@@ -1,4 +1,5 @@
 <?php
+use Horde\Tessera\TesseraConfig;
 
 declare(strict_types=1);
 
@@ -13,7 +14,8 @@ class Tessera
 {
     public static function SiteName(): string
     {
-        $sitename = $GLOBALS['conf']['general']['name'] ?? '';
+        $config = $injector->get('TesseraConfig');
+        $sitename = $config->get('general.name') ?? '';
         if (empty($sitename)) {
             $sitename = 'Horde';
         }
@@ -22,12 +24,14 @@ class Tessera
 
     public static function Mode(): string
     {
-        return $GLOBALS['conf']['general']['mode'] ?? 'disabled';
+        $config = $injector->get('TesseraConfig');
+        return $config->get('general.mode') ?? 'disabled';
     }
 
     public static function showCode(): bool
     {
-        return $GLOBALS['conf']['general']['showcode'] ?? true;
+        $config = $injector->get('TesseraConfig');
+        return $config->get('general.showcode') ?? true;
     }
 
     public static function QRCodeAuth(string $user, string $secret): string
